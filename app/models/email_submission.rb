@@ -1,0 +1,2 @@
+class EmailSubmission < ApplicationRecord
+end

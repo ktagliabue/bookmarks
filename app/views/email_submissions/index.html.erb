@@ -1,0 +1,4 @@
+<h1>All Emails</h1>
+<% @email_submissions.each do |email| %>
+  <p><%= link_to email.title, email %></p>
+<% end %>

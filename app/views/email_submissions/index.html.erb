@@ -1,4 +1,5 @@
 <h1>All Emails</h1>
 <% @email_submissions.each do |email| %>
-  <p><%= link_to email.title, email %></p>
+  <p><%= link_to email.title, email.text %></p>
 <% end %>
+<li><%= link_to "Create New Post", new_email_submission_path %></li>

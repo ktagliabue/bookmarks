@@ -3,6 +3,7 @@ class EmailSubmissionsController < ApplicationController
   end
   def create
     @email_submission= EmailSubmission.new(email_submission_params)
+    @email_submission.user = current_user
     @email_submission.save
     redirect_to @email_submission
   end

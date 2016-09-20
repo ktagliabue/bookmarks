@@ -1,6 +1,13 @@
 <h1>All Emails</h1>
 <% @email_submissions.each do |email| %>
   <p><%= link_to email.title, email.text %></p>
-  <p> <%= email.user_id %></p>
+  <small>
+     submitted <%= time_ago_in_words(email.created_at) %> ago by <%= email %><br>
+  </small>
+  <% if email.destroy %>
+    <%= link_to "Delete Email Submission", email_submissions_path, method: :destroy, class: 'btn btn-danger', data: { confirm: 'Are you sure you want to delete this submission?' } %>
+  <% end %>
+
+
 <% end %>
 <li><%= link_to "Create New Post", new_email_submission_path %></li>

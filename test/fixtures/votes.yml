@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  value: 1
+  user: one
+  email_submission: one
+
+two:
+  value: 1
+  user: two
+  email_submission: two

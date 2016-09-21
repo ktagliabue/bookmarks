@@ -4,10 +4,20 @@
   <small>
      submitted <%= time_ago_in_words(email.created_at) %> ago by <%= email %><br>
   </small>
+  <%= render partial: 'votes/voter', locals: { email: @email } %>
   <% if email.destroy %>
-    <%= link_to "Delete Email Submission", email_submissions_path, method: :destroy, class: 'btn btn-danger', data: { confirm: 'Are you sure you want to delete this submission?' } %>
+    <%= link_to "Delete Email Submission", method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure you want to delete this submission?' } %>
   <% end %>
 
 
+<% end %>
+<% if user_signed_in? %>
+  <li>
+  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+  </li>
+<% else %>
+  <li>
+  <%= link_to('Login', new_user_session_path)  %>
+  </li>
 <% end %>
 <li><%= link_to "Create New Post", new_email_submission_path %></li>

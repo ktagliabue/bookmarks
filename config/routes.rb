@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   get 'welcome/index'
 
   resources :email_submissions
-  resources :email_submissions, only: [:create, :destroy]
 
   root 'welcome#index'
 

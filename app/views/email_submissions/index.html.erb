@@ -5,9 +5,7 @@
      submitted <%= time_ago_in_words(email.created_at) %> ago by <%= email %><br>
   </small>
   <%= render partial: 'vote/voter', locals: { email: email } %>
-  <% if email.destroy %>
-    <%= link_to "Delete Email Submission", method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure you want to delete this submission?' } %>
-  <% end %>
+  <%= link_to "Delete Email Submission", email_submission_path(email), method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure you want to delete this submission?' } %>
 
 
 <% end %>

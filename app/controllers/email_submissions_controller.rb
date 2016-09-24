@@ -23,7 +23,9 @@ class EmailSubmissionsController < ApplicationController
 
   def destroy
     @email_submission = EmailSubmission.find(params[:id])
-    @email_submission.destroy
+    if @email_submission.user == current_user
+      @email_submission.destroy
+    end
     redirect_to new_email_submission_path
      #authorize @email_submission
 

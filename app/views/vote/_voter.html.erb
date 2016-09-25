@@ -1,3 +1,4 @@
 <%= link_to " ", email_submission_upvote_path(email), class: 'glyphicon glyphicon-chevron-up' %>
 <strong><%= email.up_votes %></strong>
-<%= link_to " ", '#', class: 'glyphicon glyphicon-chevron-down' %>
+<%= link_to " ", email_submission_downvote_path(email), class: 'glyphicon glyphicon-chevron-down' %>
+<strong><%= email.down_votes %></strong>

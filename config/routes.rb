@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   get 'welcome/index'
 
   resources :email_submissions do
-      get "/upvote", to:"vote#create"
+      get "/upvote", to:"vote#up_vote"
+      get "/downvote", to:"vote#down_vote"
     end
 
   root 'welcome#index'

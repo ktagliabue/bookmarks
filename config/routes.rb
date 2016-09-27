@@ -7,7 +7,7 @@ Rails.application.routes.draw do
       get "/downvote", to:"vote#down_vote"
     end
 
-  root 'welcome#index'
+  root 'email_submissions#index'
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
